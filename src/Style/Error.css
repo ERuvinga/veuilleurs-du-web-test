@@ -1,17 +1,16 @@
 .errorPage {
-    width: 100%;
-    height: 100vh;
     background-color: #E4ECF1;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+        height: 100vh;
 }
 
 .errorPage .img404 {
     width: 400px;
-    animation: imageAnim 3s alternate infinite ease-in-out;
+/* animation: imageAnim 3s alternate infinite ease-in-out;*/
 }
 
 .errorPage .textmsg {
