@@ -1,16 +1,21 @@
-import { datasOfUser } from "./state/datasUser";
-import { useRecoilValue } from "recoil";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MainPage from "./pages/main";
+import FormPage from "./pages/form";
 
 const App = ()=> {
-  const user = useRecoilValue(datasOfUser);
-  console.log(user);
+  const appRouter = createBrowserRouter([
+    {
+      path:"/",
+      element: <FormPage/>,
+    },
+    {
+      path:"/main",
+      element:<MainPage/>
+    }
+    
+  ])
 
-  return (
-    <div className="App">
-      {`welcome ${user.fname}`}
-    </div>
-  );
+  return <RouterProvider router={appRouter}/>
 }
 
 export default App;
