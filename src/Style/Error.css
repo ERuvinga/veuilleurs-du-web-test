@@ -10,7 +10,7 @@
 
 .errorPage .img404 {
     width: 400px;
-/* animation: imageAnim 3s alternate infinite ease-in-out;*/
+    animation: imageAnim 3s alternate infinite ease-in-out;
 }
 
 .errorPage .textmsg {
