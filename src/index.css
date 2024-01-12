@@ -1,23 +1,23 @@
 /* PRINCIPALE COLOR : #0575E6, MAINtEXTcOLOR: #263238, TEXTcOLOR: #787878 other: #C8D2D9 bg:#E4ECF1*/
 @font-face {
-  font-family: poppinBlack;
-  src: url("./Style/font/Poppins-Black.ttf");
+    font-family: poppinBlack;
+    src: url('./Style/font/Poppins-Black.ttf');
 }
 
 @font-face {
-  font-family: poppinRegular;
-  src: url("./Style/font/Poppins-Regular.ttf");
+    font-family: poppinRegular;
+    src: url('./Style/font/Poppins-Regular.ttf');
 }
 
 @font-face {
-  font-family: monoSpace;
-  src: url("./Style/font/SpaceMono-Regular.ttf");
+    font-family: monoSpace;
+    src: url('./Style/font/SpaceMono-Regular.ttf');
 }
 body {
-  margin: 0;
-  font-family: poppinRegular;
+    margin: 0;
+    font-family: poppinRegular;
 }
 
 .border {
-  border: solid 1px #000;
+    border: solid 1px #000;
 }

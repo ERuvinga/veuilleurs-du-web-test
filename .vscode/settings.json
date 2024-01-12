@@ -1,4 +1,7 @@
 {
-    "dart.hotReloadOnSave": "allIfDirty",
-    "editor.formatOnSave": true
+  "dart.hotReloadOnSave": "allIfDirty",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
