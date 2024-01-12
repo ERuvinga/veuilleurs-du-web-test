@@ -10,3 +10,4 @@ export const datasOfUser = atom({
         email: '',
     },
 });
+console.log('error');
