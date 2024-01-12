@@ -1,11 +1,11 @@
 .errorPage {
-    background-color: #E4ECF1;
+    background-color: #e4ecf1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-        height: 100vh;
+    height: 100vh;
 }
 
 .errorPage .img404 {
@@ -14,9 +14,10 @@
 }
 
 .errorPage .textmsg {
-    color: #0575E6;
-    font-size: .85em;
+    color: #0575e6;
+    font-size: 0.85em;
     font-weight: bold;
+    text-align: center;
 }
 
 @keyframes imageAnim {
@@ -26,5 +27,14 @@
 
     to {
         transform: scale(1.03);
+    }
+}
+@media screen and (max-width: 400px) {
+    .errorPage .img404 {
+        width: 230px;
+    }
+
+    .errorPage .textmsg {
+        font-size: 0.8em;
     }
 }

@@ -1,13 +1,14 @@
 // main page
-import {BeakerIcon} from "@heroicons/react/24/outline"
+import React from 'react';
+import { BeakerIcon } from '@heroicons/react/24/outline';
 
-const MainPage = () =>{
+const MainPage = () => {
     return (
         <div>
-            <BeakerIcon/>
+            <BeakerIcon />
             Main Page
         </div>
-    )
-}
+    );
+};
 
 export default MainPage;
