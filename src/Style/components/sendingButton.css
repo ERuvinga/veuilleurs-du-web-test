@@ -9,18 +9,25 @@
     font-size: 1.3em;
     text-align: center;
     margin-top: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
+.sendBtnDisbled {
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 30px;
+    border: none;
+    background-color: #0575e6;
+    color: #fff;
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.6;
+}
 @media screen and (min-width: 700px) {
     .sendBtn:hover {
         cursor: pointer;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .sendBtn {
-        padding: 12px 0;
-        font-size: 1em;
-        margin-top: 5px;
+        box-shadow: 0 0 4px 0 #787878;
     }
 }

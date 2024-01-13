@@ -10,7 +10,7 @@
 }
 
 @font-face {
-    font-family: monoSpace;
+    font-family: monoRegular;
     src: url('./Style/font/SpaceMono-Regular.ttf');
 }
 body {

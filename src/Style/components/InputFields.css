@@ -25,8 +25,42 @@
     color: #787878;
 }
 
+.FieldGroup .invalidInput {
+    padding: 15px 10px;
+    border-radius: 35px;
+    font-size: 16px;
+    font-family: poppinRegular;
+    color: #787878;
+    transition: all ease-in-out 0.3s;
+
+    border: solid 2px rgb(223, 70, 70);
+    font-family: poppinRegular;
+    color: rgb(223, 70, 70);
+}
+
+.invalidEmail::after {
+    content: 'Adresse mail ou numero ivalid';
+    color: rgb(223, 70, 70);
+    font-size: 0.8em;
+    font-family: monoRegular;
+}
+
+.invalidname::after {
+    content: 'Invalid name format(no_number)';
+    color: rgb(223, 70, 70);
+    font-size: 0.8em;
+    font-family: monoRegular;
+}
+
+.invalidInput:focus {
+    outline: none;
+    border: solid rgb(223, 70, 70) 2px;
+    color: rgb(223, 70, 70);
+}
+
 @media screen and (max-width: 420px) {
-    .FieldGroup .inputField {
+    .FieldGroup .inputField,
+    .FieldGroup .invalidInput {
         padding: 8px 8px;
         border-radius: 35px;
         font-size: 16px;
