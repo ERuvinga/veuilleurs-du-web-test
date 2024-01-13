@@ -9,9 +9,9 @@ const SendButton = () => {
     const datasOfFormulaire = useRecoilValue(datasOfUser);
     const formErrors = useRecoilValue(ErrorInForm);
 
-    const sendDatas = () => {
-        console.log(datasOfFormulaire);
-    };
+    // const sendDatas = () => {
+    //     console.log(datasOfFormulaire);
+    // };
 
     return (
         <button
@@ -23,7 +23,7 @@ const SendButton = () => {
                     ? 'sendBtnDisbled'
                     : 'sendBtn'
             }
-            onClick={sendDatas}
+            //onClick={sendDatas}
             disabled={
                 datasOfFormulaire == null ||
                 formErrors.fNameError ||

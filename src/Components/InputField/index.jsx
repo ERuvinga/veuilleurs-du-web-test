@@ -20,9 +20,6 @@ const InputField = (props) => {
 
     useEffect(() => {
         if (datasForm) {
-            console.log(ErrorsDatas);
-            console.log(fieldsDatas);
-
             if (ErrorsDatas.fNameError && fieldsDatas.labelText === 'FName') {
                 setInvalidField('invalidname');
             } else if (
