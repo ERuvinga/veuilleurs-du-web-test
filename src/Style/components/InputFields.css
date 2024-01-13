@@ -1,0 +1,26 @@
+/* style for input Component*/
+.FieldGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.FieldGroup .labelField {
+    color: #263238;
+    font-size: 0.9em;
+}
+
+.FieldGroup .inputField {
+    padding: 15px 10px;
+    border-radius: 35px;
+    font-size: 16px;
+    font-family: poppinRegular;
+    color: #787878;
+    border: 2px #787878 solid;
+    transition: all ease-in-out 0.3s;
+}
+
+.FieldGroup .inputField:focus {
+    outline: none;
+    border: solid #9fc1e4 2px;
+    color: #787878;
+}

@@ -23,7 +23,7 @@
     },
     "plugins": ["react", "react-hooks"],
     "rules": {
-        "no-console": "warn",
+        "no-console": "error",
         "no-alert": "error"
     }
 }
