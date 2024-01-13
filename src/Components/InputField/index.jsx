@@ -2,7 +2,6 @@ import React from 'react';
 import '../../Style/components/InputFields.css';
 
 const InputField = (props) => {
-    console.log(props);
     const fieldsDatas = { ...props };
     return (
         <div className="FieldGroup">
