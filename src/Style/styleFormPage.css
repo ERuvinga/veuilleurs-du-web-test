@@ -1,0 +1,88 @@
+/*style of formpage*/
+.containerForm {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+/*presentation side*/
+.containerForm .presentation {
+    width: 60%;
+    background: linear-gradient(to top, #021b79, #0575e6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerForm .presentation .containerPresentation {
+    position: relative;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.containerForm .presentation h1 {
+    margin: 0;
+    padding: 0;
+    font-family: poppinBlack;
+    color: #eaeef1;
+    font-size: 2.1em;
+}
+
+.containerForm .presentation span {
+    color: #eaeef1;
+    font-size: 1.2em;
+}
+
+.containerForm .presentation .linkBtn {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #eaeef1;
+    font-size: 0.9em;
+    padding: 8px 25px;
+    background-color: #0575e6;
+    border: #0575e6;
+    border-radius: 20px;
+    box-shadow: 0 0 1px 0 #143dd3;
+
+    text-align: center;
+    width: 90px;
+    width: fit-content;
+}
+
+/*Illustrations*/
+.containerForm .presentation .illustration {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+}
+
+.containerForm .presentation .illustration .circles {
+    width: 0;
+    height: 0;
+    padding: 250px;
+    border: solid 1px #0575e6;
+    border-radius: 50%;
+}
+.containerForm .presentation .illustration .cr1 {
+    position: absolute;
+    left: -200px;
+    bottom: -220px;
+}
+
+.containerForm .presentation .illustration .cr2 {
+    position: absolute;
+    bottom: -250px;
+    left: -110px;
+}
+
+/*formular side*/
+.containerForm .formDatas {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
