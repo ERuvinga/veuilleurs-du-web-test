@@ -34,7 +34,7 @@ const FormPage = () => {
                         <h2>Hello Again!</h2>
                         <span>welcome Back</span>
                     </div>
-                    <form action="#" className="ContainerFields">
+                    <section className="ContainerFields">
                         {listDatasOfForm.map((valueTab, indexTab) => (
                             <InputField
                                 typeInput={valueTab.typeInput}
@@ -45,7 +45,7 @@ const FormPage = () => {
                             />
                         ))}
                         <SendButton />
-                    </form>
+                    </section>
                 </div>
             </section>
         </main>

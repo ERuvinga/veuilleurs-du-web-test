@@ -1,4 +1,14 @@
 /*style of formpage*/
+@keyframes AnimLoading {
+    form {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 .containerForm {
     width: 100%;
     display: flex;
@@ -17,6 +27,7 @@
 }
 
 .containerForm .presentation .containerPresentation {
+    animation: AnimLoading 2s alternate-reverse;
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -69,6 +80,7 @@
     padding: 250px;
     border: solid 1px #0575e6;
     border-radius: 50%;
+    animation: AnimLoading alternate-reverse 2s;
 }
 .containerForm .presentation .illustration .cr1 {
     position: absolute;
@@ -153,6 +165,9 @@
     }
     .containerForm .formDatas {
         width: 100%;
+    }
+    .containerForm .formDatas .DisplayingContainerForm {
+        margin-bottom: 40px;
     }
     .containerForm .presentation .illustration .circles {
         padding: 100px;
