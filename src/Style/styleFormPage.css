@@ -1,25 +1,27 @@
 /*style of formpage*/
 .containerForm {
     width: 100%;
-    height: 100vh;
     display: flex;
 }
 
 /*presentation side*/
 .containerForm .presentation {
+    position: relative;
     width: 60%;
+    height: 100vh;
     background: linear-gradient(to top, #021b79, #0575e6);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
 }
 
 .containerForm .presentation .containerPresentation {
-    position: relative;
     width: 75%;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    z-index: 1;
 }
 
 .containerForm .presentation h1 {
@@ -53,11 +55,12 @@
 
 /*Illustrations*/
 .containerForm .presentation .illustration {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     padding: 10px;
     display: flex;
+    z-index: 0;
 }
 
 .containerForm .presentation .illustration .circles {
@@ -70,12 +73,12 @@
 .containerForm .presentation .illustration .cr1 {
     position: absolute;
     left: -200px;
-    bottom: -220px;
+    bottom: -280px;
 }
 
 .containerForm .presentation .illustration .cr2 {
     position: absolute;
-    bottom: -250px;
+    bottom: -300px;
     left: -110px;
 }
 
@@ -120,3 +123,72 @@
 /*END*/
 
 /*Media querry styles*/
+
+@media screen and (max-width: 990px) {
+    /*presentation side*/
+    .containerForm .presentation {
+        width: 55%;
+    }
+    .containerForm .formDatas {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .containerForm {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerForm .presentation {
+        align-items: flex-start;
+        padding-top: 50px;
+        width: 100%;
+        min-height: 250px;
+        height: 35vh;
+        box-shadow: 0 0 8px 0 #263238;
+    }
+    .containerForm .presentation .containerPresentation {
+        width: 90%;
+    }
+    .containerForm .formDatas {
+        width: 100%;
+    }
+    .containerForm .presentation .illustration .circles {
+        padding: 100px;
+    }
+    .containerForm .presentation .illustration .cr1 {
+        position: absolute;
+        left: -90px;
+        bottom: -100px;
+    }
+
+    .containerForm .presentation .illustration .cr2 {
+        position: absolute;
+        bottom: -110px;
+        left: -50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .containerForm .presentation h1 {
+        font-size: 1.7em;
+    }
+
+    .containerForm .presentation span {
+        font-size: 0.8em;
+    }
+
+    .containerForm .formDatas .DisplayingContainerForm {
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .containerForm .formDatas .DisplayingContainerForm .titles h2 {
+        font-size: 1.2em;
+    }
+
+    .containerForm .formDatas .DisplayingContainerForm .titles span {
+        font-size: 0.9em;
+    }
+}

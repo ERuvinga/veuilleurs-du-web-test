@@ -23,13 +23,13 @@ const FormPage = () => {
                         Read More
                     </a>
                 </div>
-                <div className="border illustration">
+                <div className="illustration">
                     <div className="circles cr1"></div>
                     <div className="circles cr2"></div>
                 </div>
             </section>
             <section className="formDatas">
-                <div className=" DisplayingContainerForm">
+                <div className="DisplayingContainerForm">
                     <div className="titles">
                         <h2>Hello Again!</h2>
                         <span>welcome Back</span>

@@ -16,3 +16,11 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 420px) {
+    .sendBtn {
+        padding: 12px 0;
+        font-size: 1em;
+        margin-top: 5px;
+    }
+}
