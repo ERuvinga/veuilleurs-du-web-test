@@ -3,7 +3,12 @@ import { atom } from 'recoil';
 
 export const datasOfUser = atom({
     key: 'datasOfUser',
-    default: null,
+    default: {
+        fname: '',
+        lname: '',
+        tel: '',
+        email: '',
+    },
 });
 
 export const listInputDatas = atom({
@@ -27,7 +32,7 @@ export const listInputDatas = atom({
         {
             typeInput: 'text',
             labelText: 'Tel',
-            placeholderText: '+243973668210',
+            placeholderText: '973668210',
         },
     ],
 });
@@ -38,5 +43,6 @@ export const ErrorInForm = atom({
         fNameError: true,
         lNameError: true,
         emailError: true,
+        telError: true,
     },
 });
