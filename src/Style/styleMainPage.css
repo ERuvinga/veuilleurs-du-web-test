@@ -1,0 +1,90 @@
+/* Main page Style*/
+.backHome {
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    top: 90px;
+    left: 13%;
+    color: #0575e6;
+}
+
+.backHome .icone {
+    width: 25px;
+}
+
+.mainPage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*.Navigation*/
+.mainPage .nav {
+    width: 100%;
+    min-height: 50px;
+    max-height: 60px;
+    height: fit-content;
+
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 0 4px 0 #787878;
+}
+
+.mainPage .nav .logo {
+    width: fit-content;
+    display: inline-block;
+    font-family: poppinBlack;
+    font-size: 1.8em;
+    color: #0575e6;
+    text-align: center;
+}
+
+.mainPage .nav .profil {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.mainPage .nav .profil .nameU {
+    color: #0575e6;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+.mainPage .nav .profil .icone {
+    width: 35px;
+    color: #787878;
+}
+
+@media screen and (max-width: 400px) {
+    .mainPage .nav {
+        padding: 5px 0;
+        min-height: 40px;
+    }
+    .mainPage .nav .logo {
+        font-size: 1.1em;
+    }
+
+    .mainPage .nav .profil {
+        gap: 4px;
+    }
+
+    .mainPage .nav .profil .nameU {
+        font-size: 0.7em;
+    }
+    .mainPage .nav .profil .icone {
+        width: 22px;
+    }
+    .backHome {
+        top: 60px;
+        left: 26px;
+    }
+}
+@media screen and (min-width: 500px) {
+    .backHome:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}

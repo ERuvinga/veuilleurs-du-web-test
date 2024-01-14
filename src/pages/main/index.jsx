@@ -1,62 +1,42 @@
 // main page
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilValue, useResetRecoilState } from 'recoil';
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+import {
+    ArrowLeftIcon,
+    UserCircleIcon,
+    BellAlertIcon,
+    CloudArrowUpIcon,
+} from '@heroicons/react/24/outline';
 
 //components
 import LoadingComponent from '../../Components/Loading';
+import '../../Style/styleMainPage.css';
 
 //States
 import { datasOfUser } from '../../state/datasUser';
 
+//libs
+import { checkingEmpytDatas } from '../../lib/sessions';
+
 const MainPage = () => {
     const UserD = useRecoilValue(datasOfUser);
-    const ResetDatas = useResetRecoilState(datasOfUser);
+    const setUserD = useSetRecoilState(datasOfUser);
 
     const [loading, setLoading] = useState(true);
     const [loadingText, setLoadingText] = useState('Loading ...');
     const navigate = useNavigate();
 
     const OnResetDatas = () => {
-        setLoading(true);
         setLoadingText('Clear cache ...');
-        ResetDatas();
-        const timeOutEvent = setTimeout(() => {
+        setLoading(true);
+        setTimeout(() => {
             navigate('/');
-            clearTimeout(timeOutEvent);
         }, 2200);
     };
 
-    const checkingEmpytDatas = () => {
-        if (
-            UserD.email == '' &&
-            UserD.fname == '' &&
-            UserD.lname == '' &&
-            UserD.tel == ''
-        ) {
-            if (sessionStorage.getItem('email')) {
-                const timeOutEvent = setTimeout(() => {
-                    setLoading(false);
-                    clearTimeout(timeOutEvent);
-                }, 2200);
-            } else navigate('/');
-        } else {
-            // saving datas
-            sessionStorage.setItem('fname', UserD.fname);
-            sessionStorage.setItem('lname', UserD.lname);
-            sessionStorage.setItem('email', UserD.email);
-            sessionStorage.setItem('tel', UserD.tel);
-
-            const timeOutEvent = setTimeout(() => {
-                setLoading(false);
-                clearTimeout(timeOutEvent);
-            }, 2200);
-        }
-    };
-
     useEffect(() => {
-        checkingEmpytDatas(); // cheking all datas
+        checkingEmpytDatas(UserD, setUserD, setLoading, navigate); // cheking all datas
     });
 
     return (
@@ -67,11 +47,21 @@ const MainPage = () => {
                     <span className="loadingText">{loadingText}</span>
                 </div>
             ) : (
-                <div className="border">
-                    <div onClick={OnResetDatas} className="backForm">
-                        <ArrowLeftIcon className="Icone" />
+                <div className="border mainPage">
+                    <div onClick={() => OnResetDatas()} className="backHome">
+                        <ArrowLeftIcon className="icone" />
                     </div>
-                    Main Page
+                    <div className="nav">
+                        <div className="logo">GoFinance</div>
+                        <div className="profil">
+                            <span className="nameU">{`${UserD.fname} ${UserD.lname}`}</span>
+                            <UserCircleIcon className="icone" />{' '}
+                            <BellAlertIcon className="icone" />
+                        </div>
+                    </div>
+                    <section className="">
+                        <CloudArrowUpIcon className="border" />
+                    </section>
                 </div>
             )}
         </>

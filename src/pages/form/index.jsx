@@ -1,6 +1,6 @@
 // page for formular
-import React from 'react';
-import { useRecoilValue } from 'recoil';
+import React, { useEffect } from 'react';
+import { useRecoilValue, useResetRecoilState } from 'recoil';
 import '../../Style/styleFormPage.css';
 
 // Components
@@ -8,11 +8,15 @@ import InputField from '../../Components/InputField';
 import SendButton from '../../Components/SendBtn';
 
 //States
-import { listInputDatas } from '../../state/datasUser';
+import { listInputDatas, datasOfUser } from '../../state/datasUser';
 
 const FormPage = () => {
     const listDatasOfForm = useRecoilValue(listInputDatas);
+    const ResetUserDatas = useResetRecoilState(datasOfUser);
 
+    useEffect(() => {
+        ResetUserDatas();
+    }, []);
     return (
         <main className="containerForm">
             <section className="presentation">

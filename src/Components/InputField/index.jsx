@@ -39,7 +39,7 @@ const InputField = (props) => {
         } else {
             setInvalidField('');
         }
-    }, [ErrorsDatas]);
+    }, [ErrorsDatas, datasForm]);
 
     const OnChangeValueInField = (envent, idField) => {
         // checking field that provide datas
@@ -50,7 +50,7 @@ const InputField = (props) => {
                     ...datasForm,
                     fname: name,
                 });
-                if (name.match(/^[a-zA-z]{3,}/) && !name.match(/[0-9]/)) {
+                if (name.match(/^[a-zA-z]{2,}$/)) {
                     setErrorsDatas({
                         ...ErrorsDatas,
                         fNameError: false,
@@ -66,10 +66,7 @@ const InputField = (props) => {
             }
             case 1: {
                 const secondName = envent.target.value;
-                if (
-                    secondName.match(/^[a-zA-z]{3,}/) &&
-                    !secondName.match(/[0-9]/)
-                ) {
+                if (secondName.match(/^[a-zA-z]{2,}$/)) {
                     setErrorsDatas({
                         ...ErrorsDatas,
                         lNameError: false,
@@ -133,6 +130,7 @@ const InputField = (props) => {
                 {fieldsDatas.labelText}
             </label>
             <input
+                autoComplete="on"
                 className={invalidField == '' ? 'inputField' : 'invalidInput'}
                 type={fieldsDatas.typeInput}
                 placeholder={fieldsDatas.placeholderText}
