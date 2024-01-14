@@ -1,9 +1,32 @@
 /* Main page Style*/
+@keyframes animCard {
+    from {
+        left: -200px;
+        opacity: 0;
+    }
+
+    to {
+        left: 40px;
+        opacity: 1;
+    }
+}
+
+@keyframes SmallAnimCard {
+    from {
+        left: -200px;
+        opacity: 0;
+    }
+
+    to {
+        left: 15px;
+        opacity: 1;
+    }
+}
 .backHome {
     transition: all 0.2s ease-in-out;
     position: absolute;
     top: 90px;
-    left: 13%;
+    left: 40px;
     color: #0575e6;
 }
 
@@ -16,6 +39,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 /*.Navigation*/
@@ -30,6 +54,8 @@
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 0 0 4px 0 #787878;
+    background-color: white;
+    z-index: 1;
 }
 
 .mainPage .nav .logo {
@@ -58,10 +84,172 @@
     color: #787878;
 }
 
-@media screen and (max-width: 400px) {
+.mainPage .DatasPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.mainPage .DatasPage .DescrText {
+    width: 45%;
+    height: 100%;
+}
+
+.mainPage .DatasPage .DescrText .description {
+    width: 80%;
+    padding: 40px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mainPage .DatasPage .DescrText .description .title {
+    font-family: poppinBlack;
+    font-size: 2em;
+    color: #263238;
+    margin: 0;
+}
+.mainPage .DatasPage .DescrText .description .title .nameUser {
+    color: #0575e6;
+}
+
+.mainPage .DatasPage .DescrText .description .otherText {
+    font-size: 1.1em;
+    color: #787878;
+}
+
+.mainPage .DatasPage .DescrText .description .linkBtn {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #eaeef1;
+    font-size: 0.9em;
+    padding: 8px 25px;
+    background-color: #0575e6;
+    border: #0575e6;
+    border-radius: 20px;
+    box-shadow: 0 0 1px 0 #143dd3;
+
+    text-align: center;
+    width: 90px;
+    width: fit-content;
+}
+
+/*Illustratrion*/
+.mainPage .DatasPage .DescrIllustartion {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mainPage .DatasPage .DescrIllustartion .bloc {
+    position: relative;
+    width: 1000px;
+    height: 1200px;
+    right: -50%;
+    top: -15%;
+    background: linear-gradient(to top, #021b79, #0575e6);
+    transform: rotate(30deg);
+    z-index: 0;
+}
+
+.mainPage .DatasPage .DescrIllustartion .ManageImg {
+    position: absolute;
+    z-index: 2;
+    width: 50%;
+}
+.mainPage .DatasPage .icone {
+    width: 25px;
+}
+
+.mainPage .DatasPage .CardDatas {
+    position: absolute;
+    left: 40px;
+    bottom: 15%;
+    box-shadow: 0 0 4px 0 #d5e1e9;
+    border-radius: 8px;
+    background-color: #fff;
+    animation: animCard alternate 2s ease-in-out;
+}
+
+.mainPage .DatasPage .CardDatas .titleCard {
+    display: flex;
+    align-items: center;
+    color: #0575e6;
+    gap: 5px;
+    padding: 10px 10px;
+    border-bottom: solid 1px #d5e1e9;
+}
+
+/*Card*/
+.mainPage .DatasPage .CardDatas .ContainerDatas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+}
+
+.mainPage .DatasPage .CardDatas .ContainerDatas .ItemCard {
+    color: #263238;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    padding: 2px 10px;
+}
+
+.mainPage .DatasPage .CardDatas .ContainerDatas .ItemCard .value {
+    color: #787878;
+    font-family: monoRegular;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+    /*Illustratrion*/
+    .mainPage .DatasPage .DescrIllustartion {
+        width: 55%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .mainPage .DatasPage .DescrIllustartion .bloc {
+        width: 1500px;
+        height: 1200px;
+        right: -80%;
+        top: -15%;
+        transform: rotate(30deg);
+    }
+
+    .mainPage .DatasPage .DescrIllustartion .ManageImg {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .mainPage .DatasPage .CardDatas {
+        position: absolute;
+        left: 40px;
+        bottom: 40px;
+    }
+
+    .mainPage .DatasPage .CardDatas .ContainerDatas .ItemCard {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 650px) {
     .mainPage .nav {
         padding: 5px 0;
         min-height: 40px;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
     }
     .mainPage .nav .logo {
         font-size: 1.1em;
@@ -79,7 +267,107 @@
     }
     .backHome {
         top: 60px;
-        left: 26px;
+        left: 18px;
+    }
+
+    .mainPage .DatasPage .DescrText .description {
+        width: 70%;
+        padding: 15px;
+        margin-top: 90px;
+        gap: 5px;
+    }
+
+    .mainPage .DatasPage .DescrText .description .title {
+        font-size: 1.5em;
+    }
+
+    .mainPage .DatasPage .DescrText .description .otherText {
+        font-size: 0.9em;
+    }
+    .mainPage .DatasPage {
+        flex-direction: column;
+    }
+    .mainPage .DatasPage .DescrText {
+        width: 100%;
+        height: 100%;
+    }
+    /*Illustratrion*/
+    .mainPage .DatasPage .DescrIllustartion {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .mainPage .DatasPage .DescrIllustartion .bloc {
+        height: 1200px;
+        right: -25%;
+        top: 5%;
+        transform: rotate(50deg);
+    }
+
+    .mainPage .DatasPage .DescrIllustartion .ManageImg {
+        width: 50%;
+        top: 3%;
+    }
+    .mainPage .DatasPage .CardDatas {
+        left: 15px;
+        bottom: 20px;
+        animation: SmallAnimCard alternate 2s ease-in-out;
+        box-shadow: 0 0 4px 0 #d5e1e9;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mainPage .nav {
+        padding: 5px 0;
+        min-height: 40px;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    .mainPage .nav .logo {
+        font-size: 1.1em;
+    }
+
+    .mainPage .nav .profil {
+        gap: 4px;
+    }
+
+    .mainPage .nav .profil .nameU {
+        font-size: 0.7em;
+    }
+    .mainPage .nav .profil .icone {
+        width: 22px;
+    }
+    .backHome {
+        top: 60px;
+        left: 18px;
+    }
+
+    .mainPage .DatasPage .DescrText .description {
+        width: 90%;
+        padding: 20px;
+        margin-top: 90px;
+        gap: 5px;
+    }
+
+    .mainPage .DatasPage .DescrText .description .title {
+        font-size: 1.5em;
+    }
+
+    .mainPage .DatasPage .DescrText .description .otherText {
+        font-size: 0.9em;
+    }
+
+    .mainPage .DatasPage .DescrIllustartion .bloc {
+        height: 1200px;
+        right: -20%;
+        top: -10%;
+        transform: rotate(45deg);
     }
 }
 @media screen and (min-width: 500px) {
