@@ -1,24 +1,24 @@
 import React from 'react';
 import '../../Style/components/sendingButton.css';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
 
 //states
-import { datasOfUser, ErrorInForm } from '../../state/datasUser';
+import { ErrorInForm } from '../../state/datasUser';
 
 const SendButton = () => {
-    const datasOfFormulaire = useRecoilValue(datasOfUser);
     const formErrors = useRecoilValue(ErrorInForm);
+    const ResetStatesError = useResetRecoilState(ErrorInForm);
     const navigate = useNavigate();
 
     const sendDatas = () => {
+        ResetStatesError();
         navigate('/main');
     };
 
     return (
         <button
             className={
-                datasOfFormulaire == null ||
                 formErrors.fNameError ||
                 formErrors.lNameError ||
                 formErrors.emailError ||
@@ -28,7 +28,6 @@ const SendButton = () => {
             }
             onClick={sendDatas}
             disabled={
-                datasOfFormulaire == null ||
                 formErrors.fNameError ||
                 formErrors.lNameError ||
                 formErrors.emailError ||
