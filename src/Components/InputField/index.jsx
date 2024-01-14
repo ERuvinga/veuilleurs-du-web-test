@@ -2,13 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../../Style/components/InputFields.css';
 import { useRecoilState } from 'recoil';
 
-const modelDatasOfUser = {
-    fname: '',
-    lname: '',
-    tel: '',
-    email: '',
-};
-
 //states
 import { datasOfUser, ErrorInForm } from '../../state/datasUser';
 
@@ -19,27 +12,36 @@ const InputField = (props) => {
     const [invalidField, setInvalidField] = useState('');
 
     useEffect(() => {
-        if (datasForm) {
-            if (ErrorsDatas.fNameError && fieldsDatas.labelText === 'FName') {
-                setInvalidField('invalidname');
-            } else if (
-                ErrorsDatas.lNameError &&
-                fieldsDatas.labelText === 'SName'
-            ) {
-                setInvalidField('invalidname');
-            } else if (
-                ErrorsDatas.emailError &&
-                fieldsDatas.labelText === 'email'
-            ) {
-                setInvalidField('invalidEmail');
-            } else {
-                setInvalidField('');
-            }
+        if (
+            ErrorsDatas.fNameError &&
+            fieldsDatas.labelText === 'FName' &&
+            datasForm.fname !== ''
+        ) {
+            setInvalidField('invalidname');
+        } else if (
+            ErrorsDatas.lNameError &&
+            fieldsDatas.labelText === 'SName' &&
+            datasForm.lname !== ''
+        ) {
+            setInvalidField('invalidname');
+        } else if (
+            ErrorsDatas.emailError &&
+            fieldsDatas.labelText === 'email' &&
+            datasForm.email !== ''
+        ) {
+            setInvalidField('invalidEmail');
+        } else if (
+            ErrorsDatas.telError &&
+            fieldsDatas.labelText === 'Tel' &&
+            datasForm.tel !== ''
+        ) {
+            setInvalidField('invalidTel');
+        } else {
+            setInvalidField('');
         }
-    }, [ErrorsDatas]);
+    }, [ErrorsDatas, datasForm]);
 
     const OnChangeValueInField = (envent, idField) => {
-        setDatasForm({ ...modelDatasOfUser });
         // checking field that provide datas
         switch (idField) {
             case 0: {
@@ -48,7 +50,7 @@ const InputField = (props) => {
                     ...datasForm,
                     fname: name,
                 });
-                if (name.match(/^[a-zA-z]{3,}/) && !name.match(/[0-9]/)) {
+                if (name.match(/^[a-zA-z]{2,}$/)) {
                     setErrorsDatas({
                         ...ErrorsDatas,
                         fNameError: false,
@@ -64,10 +66,7 @@ const InputField = (props) => {
             }
             case 1: {
                 const secondName = envent.target.value;
-                if (
-                    secondName.match(/^[a-zA-z]{3,}/) &&
-                    !secondName.match(/[0-9]/)
-                ) {
+                if (secondName.match(/^[a-zA-z]{2,}$/)) {
                     setErrorsDatas({
                         ...ErrorsDatas,
                         lNameError: false,
@@ -104,10 +103,22 @@ const InputField = (props) => {
                 break;
             }
             case 3: {
+                const tel = envent.target.value;
                 setDatasForm({
                     ...datasForm,
-                    tel: envent.target.value,
+                    tel: tel,
                 });
+                if (tel.match(/^[0-9]{9}$/) && !tel.match(/[a-zA-Z-+]/)) {
+                    setErrorsDatas({
+                        ...ErrorsDatas,
+                        telError: false,
+                    });
+                } else {
+                    setErrorsDatas({
+                        ...ErrorsDatas,
+                        telError: true,
+                    });
+                }
                 break;
             }
         }
@@ -119,6 +130,7 @@ const InputField = (props) => {
                 {fieldsDatas.labelText}
             </label>
             <input
+                autoComplete="on"
                 className={invalidField == '' ? 'inputField' : 'invalidInput'}
                 type={fieldsDatas.typeInput}
                 placeholder={fieldsDatas.placeholderText}

@@ -1,4 +1,14 @@
 /* style for input Component*/
+@keyframes AnimLoading {
+    form {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 .FieldGroup {
     display: flex;
     flex-direction: column;
@@ -43,6 +53,7 @@
     color: rgb(223, 70, 70);
     font-size: 0.8em;
     font-family: monoRegular;
+    animation: AnimLoading alternate-reverse 1.5s ease-in-out;
 }
 
 .invalidname::after {
@@ -50,6 +61,15 @@
     color: rgb(223, 70, 70);
     font-size: 0.8em;
     font-family: monoRegular;
+    animation: AnimLoading alternate-reverse 1.5s ease-in-out;
+}
+
+.invalidTel::after {
+    content: 'Invalid format of Tel number)';
+    color: rgb(223, 70, 70);
+    font-size: 0.8em;
+    font-family: monoRegular;
+    animation: AnimLoading alternate-reverse 1.5s ease-in-out;
 }
 
 .invalidInput:focus {
